@@ -1,0 +1,84 @@
+<!DOCTYPE html>+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+
+ <script src="webapp/lib/angular1.6/angular.min.js" ></script>
+ <script src="webapp/lib/angular1.6/angular-animate.min.js"></script>
+ <script src="scripts/ui-bootstrap-tpls-2.3.1.min.js"></script>
+
+<script src = "scripts/jquery.min.js"></script>
+
+
+
+
+<link href ="bootstrap/css/bootstrap.min.css" rel = "stylesheet"/>
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<title>Insert title here</title>
+</head>
+<body  ng-app = "ui.bootstrap.demo">
+<div ng-controller = "YoutubeController3">
+<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand">Title</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li><a href="#">Item12545</a></li>
+					<li><a href="#">Item2</a></li>
+
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#"> Item3 with Drop down menu<span
+							class="caret"></span></a>
+
+						<ul class="dropdown-menu">
+							<li><a href="#">SubItem</a></li>
+							<li><a href="#">SubItem2</a></li>
+							<li><a href="#">SubItem3</a></li>
+						</ul></li>
+				</ul>
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="query"
+							placeholder="{{query}}">
+						<button class="btn-default"  ng-click="search(query)">Search</button>
+					</div>
+				</form>
+			</div>
+		</nav>
+<div ng-controller="TabController">
+<p>{{greetings}}</p>
+
+  <uib-tabset active="0">
+    
+    <uib-tab index="$index" ng-repeat="tab in tabs" heading="{{tab.title}}">
+   
+    	<div compile-html="tab.content"></div>
+   
+    
+   
+    
+    </uib-tab>
+    
+    <uib-tab index = "tabs.length + 1" heading = "+"  ng-click ="addTab()">
+    </uib-tab>
+  </uib-tabset>
+</div>
+</div>
+
+
+<!-- Modules -->
+
+	
+	<!-- Controllers -->
+	<script src="webapp/TabController.js"></script>
+	
+	<!-- Directive -->
+	<script src = "webapp/YtDirective.js"></script>
+	<script src = "webapp/YtDirectiveUpdated.js"></script>
+
+</body>
+</html>

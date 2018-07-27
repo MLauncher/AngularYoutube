@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+ <script src="webapp/lib/angular/angular.min.js" ></script>
+
+<!--  <script src="scripts/ui-bootstrap-tpls-2.3.1.min.js"></script> -->
+
+<script src="scripts/jquery.min.js" type="text/javascript"></script>
+
+
+<link rel="stylesheet" type="text/css"
+	href="webapp/resource/bootstrap.css" />
+
+<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<title>Title</title>
+</head>
+<body ng-app="YoutubeApp">
+	<div ng-controller="YoutubeController">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand">Title</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li><a href="#">Item12545</a></li>
+					<li><a href="#">Item2</a></li>
+
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#"> Item3 with Drop down menu<span
+							class="caret"></span></a>
+
+						<ul class="dropdown-menu">
+							<li><a href="#">SubItem</a></li>
+							<li><a href="#">SubItem2</a></li>
+							<li><a href="#">SubItem3</a></li>
+						</ul></li>
+				</ul>
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="query"
+							placeholder="{{query}}">
+						<button class="btn-default"  ng-click="search(query)">Search</button>
+					</div>
+				</form>
+			</div>
+		</nav>
+
+		
+
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+			<li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+			<li><a></a></li>
+
+		</ul>
+
+
+		<div class="tab-content">
+			<div id="home" class="tab-pane fade in active">
+				<h3>HOME</h3>
+
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#liked">Liked
+							Videos</a></li>
+					<li><a data-toggle="tab" href="#search">Results</a></li>
+				</ul>
+
+				<div class="tab-content">
+					<div id="liked" class="tab-pane fade in active">
+
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6">
+									<youtube width="{{yt.width}}" height="{{yt.height}}"
+										videoid="okTi4MmRimM"> </youtube>
+								</div>
+
+								<div style="overflow: scroll; height: 400px" class="col-md-6">
+									<div ng-repeat="video in yt.videos" class="col-md-7"
+										ng-click="changeVideo(video.videoId)">
+
+										<img ng-src="http://i3.ytimg.com/vi/{{video.videoId}}/1.jpg">
+										<p>{{video.videoTitle}}</p>
+
+
+
+									</div>
+								</div>
+								<br />
+								<button ng-click="authwindow()">Authorize</button>
+								<button ng-click="search()">Search</button>
+							</div>
+						</div>
+					</div>
+
+
+					<div id="search" class="tab-pane">
+						<p>The Test Results</p>
+					</div>
+
+
+				</div>
+
+			</div>
+
+
+			<div id="menu1" class="tab-pane">
+				<h3>Menu 1</h3>
+
+				<div class=block>
+
+					<p>New Id = {{yt.id}}</p>
+
+
+
+					<p>Message2:{{message2}}</p>
+					<p>Channel Info: {{infolist}}</p>
+					<p>Data:{{data}}</p>
+
+				</div>
+
+				<table border="1" class="table table-striped table-hover ">
+					<thead>
+						<tr>
+							<th>Header1</th>
+							<th>Header2</th>
+							<th>Header3</th>
+						</tr>
+
+					</thead>
+					<tbody>
+
+						<tr>
+							<td>Detail1</td>
+							<td>Detail2</td>
+							<td>Detail3</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Modules -->
+	
+	<!-- Controllers -->
+	<script src="webapp/TabController.js"></script>
+	<!-- Directive -->
+	<script src="webapp/YtDirective.js"></script>
+</body>

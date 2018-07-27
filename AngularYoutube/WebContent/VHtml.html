@@ -1,0 +1,46 @@
+
+
+	
+
+
+
+<div>
+
+<h1>Hello VHtml</h1>
+
+<div class="container">
+							<div class="row">
+								<div class="col-md-6">
+								
+									<youtubeup width="300" height="300" videoid="{{yt.id}}"> </youtubeup>
+									
+									
+								</div>
+
+								<div style="overflow: scroll; height: 400px" class="col-md-6">
+									<div ng-repeat="video in yt.videos" class="col-md-7" ng-click="changeVideo(video.videoId)">
+
+										<img ng-src="http://i3.ytimg.com/vi/{{video.videoId}}/1.jpg">
+										
+										<p>{{video.videoTitle}}</p>
+
+
+
+									</div>
+								</div>
+								<br />
+								<button ng-click="authwindow()">Authorize</button>
+								<button ng-click="search()">Search</button>
+							</div>
+						</div>
+					</div>
+
+					
+
+
+
+
+	
+
+
+

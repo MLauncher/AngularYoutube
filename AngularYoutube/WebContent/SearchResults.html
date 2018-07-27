@@ -1,0 +1,44 @@
+
+
+
+
+
+
+
+<h1>Hello SearchResults2</h1>
+<div class="container">
+							<div class="row">
+								<div class="col-md-6">
+								
+									<p>The tab index {{tab.index}}</p>
+									<youtubeup  width="300" height="300" videoid="{{tabVideoid[tab.index-2]}}"> </youtubeup>
+								</div>
+
+								<div style="overflow: scroll; height: 400px" class="col-md-6">
+									<div ng-repeat="video in allResults[tab.index-2]" class="col-md-7"  ng-click="changeVideo(video.videoId,tab.index-2)">
+									 
+
+										<img ng-src="http://i3.ytimg.com/vi/{{video.videoId}}/1.jpg">
+										<p>{{video.videoTitle}}</p>
+
+
+
+									</div>
+								</div>
+								<br />
+							
+							</div>
+						</div>
+						
+
+
+						
+			
+					
+
+
+
+
+
+
+
